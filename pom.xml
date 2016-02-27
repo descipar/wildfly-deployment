@@ -9,11 +9,19 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <!-- Dependencies -->
+        <version.wildfly-controller>8.2.1.Final</version.wildfly-controller>
+        <!-- Plugin -->
+        <version.plugin.jar>2.6</version.plugin.jar>
+        <version.plugin.dependency>2.10</version.plugin.dependency>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.wildfly</groupId>
             <artifactId>wildfly-controller</artifactId>
-            <version>8.2.1.Final</version>
+            <version>${version.wildfly-controller}</version>
         </dependency>
     </dependencies>
 
@@ -23,7 +31,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>2.6</version>
+                <version>${version.plugin.jar}</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -37,7 +45,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.10</version>
+                <version>${version.plugin.dependency}</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
