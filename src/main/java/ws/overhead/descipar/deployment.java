@@ -10,10 +10,13 @@ import java.net.InetAddress;
 
 public class deployment {
 
+    private Options options = null;
+
+
     public static void main(final String[] args) throws Exception {
         System.out.println("Printing arguments");
         for (String element : args) {
-            System.out.println(element);
+
         }
         ModelControllerClient client = ModelControllerClient.Factory.create(
                 InetAddress.getByName("localhost"), 9990,
