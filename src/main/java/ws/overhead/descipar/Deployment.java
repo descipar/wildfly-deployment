@@ -16,8 +16,6 @@ public class Deployment {
         this.deploymentOptions = options;
     }
 
-
-
     public void startDeplyoment() throws Exception {
 
         ModelControllerClient client = ModelControllerClient.Factory.create(
