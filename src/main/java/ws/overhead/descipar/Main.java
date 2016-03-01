@@ -14,6 +14,7 @@ public class Main {
             Options options = new Options();
             if (ArrayUtils.contains(args, OptionsEnum.VERBOSE.toString())) {
                 verbose = true;
+                options.setVerbose(true);
             }
             for (String element : args) {
                 if (element.startsWith(OptionsEnum.ARTIFACT_NAME.toString())) {
@@ -29,17 +30,42 @@ public class Main {
                     }
                 }
                 if (element.startsWith(OptionsEnum.MAVEN_REPOSITORY.toString())) {
-                    options.setArtifactName((element.split("=")[1]));
+                    options.setMavenRepo((element.split("=")[1]));
                     if (verbose) {
-                        System.out.print("Setting Maven Repository to " + options.getArtifactName());
+                        System.out.print("Setting Maven Repository to " + options.getMavenRepo());
+                    }
+                }
+                if (element.startsWith(OptionsEnum.PORT_OFFSET.toString())) {
+                    options.setPortOffset(Integer.valueOf(element.split("=")[1]));
+                    if (verbose) {
+                        System.out.print("Setting Portoffset to " + options.getPortOffset());
+                    }
+                }
+                if (element.startsWith(OptionsEnum.WILDFLY_URL.toString())) {
+                    options.setWildflyUrl(element.split("=")[1]);
+                    if (verbose) {
+                        System.out.print("Setting Wildfly Url to " + options.getWildflyUrl());
+                    }
+                }
+                if (element.startsWith(OptionsEnum.USERNAME.toString())) {
+                    options.setUsername(element.split("=")[1]);
+                    if (verbose) {
+                        System.out.print("Setting Username to " + options.getUsername());
+                    }
+                }
+                if (element.startsWith(OptionsEnum.PASSWORD.toString())) {
+                    options.setPassword(element.split("=")[1]);
+                    if (verbose) {
+                        System.out.print("Setting Password to " + options.getPassword());
                     }
                 }
 
+            } if  (!options.isValid()) {
+                abort();
+            } else {
+                Deployment deployment = new Deployment(options);
 
             }
-
-            Deployment deployment = new Deployment(new Options());
-            deployment.deplyoment(null);
         }
     }
 

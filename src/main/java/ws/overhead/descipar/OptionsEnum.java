@@ -8,7 +8,9 @@ public enum OptionsEnum {
     MAVEN_REPOSITORY ("-maven"),
     PORT_OFFSET ("-offset"),
     WILDFLY_URL ("-wildfly"),
-    VERBOSE ("-v");
+    VERBOSE ("-v"),
+    USERNAME ("-user"),
+    PASSWORD ("-password");
 
 
     private final String name;
