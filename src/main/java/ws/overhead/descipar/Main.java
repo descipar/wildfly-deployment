@@ -64,6 +64,7 @@ public class Main {
                 abort();
             } else {
                 Deployment deployment = new Deployment(options);
+                deployment.startDeplyoment();
 
             }
         }
