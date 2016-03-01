@@ -8,16 +8,17 @@ import javax.security.sasl.RealmCallback;
 import java.io.IOException;
 import java.net.InetAddress;
 
-public class deployment {
+public class xDeployment {
 
-    private Options options = null;
+    private final Options deploymentOptions;
+
+    public xDeployment(Options options) {
+        this.deploymentOptions = options;
+    }
 
 
-    public static void main(final String[] args) throws Exception {
-        System.out.println("Printing arguments");
-        for (String element : args) {
+    public void startDeplyoment() throws Exception {
 
-        }
         ModelControllerClient client = ModelControllerClient.Factory.create(
                 InetAddress.getByName("localhost"), 9990,
                 new CallbackHandler() {
@@ -27,10 +28,10 @@ public class deployment {
                         for (Callback current : callbacks) {
                             if (current instanceof NameCallback) {
                                 NameCallback ncb = (NameCallback) current;
-                                ncb.setName(args[0]);
+                                ncb.setName(deploymentOptions.getUsername());
                             } else if (current instanceof PasswordCallback) {
                                 PasswordCallback pcb = (PasswordCallback) current;
-                                pcb.setPassword(args[1].toCharArray());
+                                pcb.setPassword(deploymentOptions.getPassword().toCharArray());
                             } else if (current instanceof RealmCallback) {
                                 RealmCallback rcb = (RealmCallback) current;
                                 rcb.setText(rcb.getDefaultText());

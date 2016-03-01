@@ -63,7 +63,7 @@ public class Main {
             } if  (!options.isValid()) {
                 abort();
             } else {
-                Deployment deployment = new Deployment(options);
+                xDeployment deployment = new xDeployment(options);
                 deployment.startDeplyoment();
 
             }
