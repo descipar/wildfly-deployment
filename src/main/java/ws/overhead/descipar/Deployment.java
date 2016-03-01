@@ -8,11 +8,11 @@ import javax.security.sasl.RealmCallback;
 import java.io.IOException;
 import java.net.InetAddress;
 
-public class xDeployment {
+public class Deployment {
 
     private final Options deploymentOptions;
 
-    public xDeployment(Options options) {
+    public Deployment(Options options) {
         this.deploymentOptions = options;
     }
 
