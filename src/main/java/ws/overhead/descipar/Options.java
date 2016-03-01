@@ -3,26 +3,34 @@ package ws.overhead.descipar;
 
 public class Options {
 
-    private String name = "";
-    private String Version = "";
+    private String artifactName = "";
+    private String artifactVersion = "";
     private String networkaddress = "";
     private Integer portOffset = 0;
+    private String mavenRepo = "";
 
-
-    public String getName() {
-        return name;
+    public String getMavenRepo() {
+        return mavenRepo;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMavenRepo(String mavenRepo) {
+        this.mavenRepo = mavenRepo;
     }
 
-    public String getVersion() {
-        return Version;
+    public String getArtifactName() {
+        return artifactName;
     }
 
-    public void setVersion(String version) {
-        Version = version;
+    public void setArtifactName(String artifactName) {
+        this.artifactName = artifactName;
+    }
+
+    public String getArtifactVersion() {
+        return artifactVersion;
+    }
+
+    public void setArtifactVersion(String artifactVersion) {
+        this.artifactVersion = artifactVersion;
     }
 
     public String getNetworkaddress() {

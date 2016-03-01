@@ -12,12 +12,18 @@
     <properties>
         <!-- Dependencies -->
         <version.wildfly-controller>8.2.1.Final</version.wildfly-controller>
+        <version.common-lang3>3.4</version.common-lang3>
         <!-- Plugin -->
         <version.plugin.jar>2.6</version.plugin.jar>
         <version.plugin.dependency>2.10</version.plugin.dependency>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${version.common-lang3}</version>
+        </dependency>
         <dependency>
             <groupId>org.wildfly</groupId>
             <artifactId>wildfly-controller</artifactId>
@@ -36,7 +42,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>ws.overhead.descipar.deployment</mainClass>
+                            <mainClass>ws.overhead.descipar.Main</mainClass>
                             <classpathPrefix>lib/</classpathPrefix>
                         </manifest>
                     </archive>
