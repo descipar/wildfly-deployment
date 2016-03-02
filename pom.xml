@@ -29,6 +29,11 @@
             <artifactId>wildfly-controller</artifactId>
             <version>${version.wildfly-controller}</version>
         </dependency>
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-cli</artifactId>
+            <version>${version.wildfly-controller}</version>
+        </dependency>
     </dependencies>
 
 

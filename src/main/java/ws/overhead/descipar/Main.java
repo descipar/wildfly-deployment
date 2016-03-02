@@ -18,15 +18,21 @@ public class Main {
             }
             for (String element : args) {
                 if (element.startsWith(OptionsEnum.ARTIFACT_NAME.toString())) {
-                    options.setArtifactName((element.split("=")[1]));
+                    options.setArtifactId((element.split("=")[1]));
                     if (verbose) {
-                        System.out.print("Setting Artifact name to " + options.getArtifactName());
+                        System.out.print("Setting Artifact name to " + options.getArtifactId());
                     }
                 }
-                if (element.startsWith(OptionsEnum.ARTIFACT_VERSION.toString())) {
+                if (element.startsWith(OptionsEnum.ARTIFACT_ID.toString())) {
                     options.setArtifactVersion((element.split("=")[1]));
                     if (verbose) {
                         System.out.print("Setting Artifact Version to " + options.getArtifactVersion());
+                    }
+                }
+                if (element.startsWith(OptionsEnum.GROUP_ID.toString())) {
+                    options.setGroupid((element.split("=")[1]));
+                    if (verbose) {
+                        System.out.print("Setting Group ID to " + options.getGroupid());
                     }
                 }
                 if (element.startsWith(OptionsEnum.MAVEN_REPOSITORY.toString())) {

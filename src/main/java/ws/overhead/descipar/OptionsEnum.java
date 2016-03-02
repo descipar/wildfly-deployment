@@ -4,7 +4,8 @@ package ws.overhead.descipar;
 public enum OptionsEnum {
     HELP ("-help"),
     ARTIFACT_NAME ("-name"),
-    ARTIFACT_VERSION ("-version"),
+    ARTIFACT_ID ("-artifactid"),
+    GROUP_ID ("-groupid"),
     MAVEN_REPOSITORY ("-maven"),
     PORT_OFFSET ("-offset"),
     WILDFLY_URL ("-wildfly"),

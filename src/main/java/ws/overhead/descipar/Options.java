@@ -4,64 +4,67 @@ public class Options {
 
     private static final Integer basePort = 9990;
     private boolean verbose = false;
-    private String artifactName = null;
+    private String artifactId = null;
     private String artifactVersion = null;
     private String wildflyUrl = "localhost";
     private Integer portOffset = 0;
     private String mavenRepo = "https://repo1.maven.org/maven2/";
     private String username = null;
     private String password = "";
+    private String groupid = "";
 
-    public String getMavenRepo() {
+    String getMavenRepo() {
         return mavenRepo;
     }
 
-    public void setMavenRepo(String mavenRepo) {
+     void setMavenRepo(String mavenRepo) {
         this.mavenRepo = mavenRepo;
     }
 
-    public String getArtifactName() {
-        return artifactName;
+     String getArtifactId() {
+        return artifactId;
     }
 
-    public void setArtifactName(String artifactName) {
-        this.artifactName = artifactName;
+     void setArtifactId(String artifactId) {
+        this.artifactId = artifactId;
     }
 
-    public String getArtifactVersion() {
+     String getArtifactVersion() {
         return artifactVersion;
     }
 
-    public void setArtifactVersion(String artifactVersion) {
+     void setArtifactVersion(String artifactVersion) {
         this.artifactVersion = artifactVersion;
     }
 
-    public String getWildflyUrl() {
+     String getWildflyUrl() {
         return wildflyUrl;
     }
 
-    public void setWildflyUrl(String wildflyUrl) {
+     void setWildflyUrl(String wildflyUrl) {
         this.wildflyUrl = wildflyUrl;
     }
 
-    public Integer getPortOffset() {
+     Integer getPortOffset() {
         return portOffset;
     }
 
-    public void setPortOffset(Integer portOffset) {
+
+
+     void setPortOffset(Integer portOffset) {
         //TODO calculate port offset based on normal wildfly ports
         this.portOffset = portOffset;
     }
 
-    public boolean isValid() {
-        return artifactName != null && artifactVersion != null && username != null;
+     boolean isValid() {
+        return artifactId != null && artifactVersion != null && username != null;
     }
 
     public boolean isVerbose() {
         return verbose;
     }
 
-    public void setVerbose(boolean verbose) {
+     void setVerbose(boolean verbose) {
         this.verbose = verbose;
     }
 
@@ -73,19 +76,27 @@ public class Options {
         return String.valueOf(basePort + portOffset);
     }
 
-    public String getUsername() {
+     String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+     void setUsername(String username) {
         username = username;
     }
 
-    public String getPassword() {
+     String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+     void setPassword(String password) {
         this.password = password;
+    }
+
+     String getGroupid() {
+        return groupid;
+    }
+
+     void setGroupid(String groupid) {
+        this.groupid = groupid;
     }
 }
