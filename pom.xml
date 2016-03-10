@@ -13,12 +13,36 @@
         <!-- Dependencies -->
         <version.wildfly-controller>8.2.1.Final</version.wildfly-controller>
         <version.common-lang3>3.4</version.common-lang3>
+        <version.aether>1.1.0</version.aether>
+        <version.maven-settings>3.3.9</version.maven-settings>
+        <version.junit>4.12</version.junit>
+        <version.mockito>1.9.5</version.mockito>
         <!-- Plugin -->
         <version.plugin.jar>2.6</version.plugin.jar>
         <version.plugin.dependency>2.10</version.plugin.dependency>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${version.junit}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${version.mockito}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-settings-builder</artifactId>
+            <version>${version.maven-settings}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.aether</groupId>
+            <artifactId>aether-api</artifactId>
+            <version>${version.aether}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>

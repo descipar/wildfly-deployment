@@ -18,6 +18,8 @@ public class Deployment {
     }
 
     public void startDeplyoment() throws Exception {
+      // get artifact
+
 
     }
 

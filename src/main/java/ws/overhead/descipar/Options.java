@@ -57,7 +57,7 @@ public class Options {
     }
 
      boolean isValid() {
-        return artifactId != null && artifactVersion != null && username != null;
+        return artifactId != null && groupid != null && username != null;
     }
 
     public boolean isVerbose() {
