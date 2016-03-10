@@ -8,25 +8,14 @@ import org.apache.maven.settings.validation.DefaultSettingsValidator;
 
 import java.io.File;
 
-public class MavenSettingsReader {
+class MavenSettingsReader {
 
+  private static final String SETTINGS_FILENAME =  "settings.xml";
 
-  public void readSettingsFromMaven(){
-    Settings settings = null;
-    try {
-      settings = getSettings();
-    } catch (SettingsBuildingException e) {
-      e.printStackTrace();
-    }
-    String test = settings.getLocalRepository();
-
-  }
-
-
-  public static Settings getSettings() throws SettingsBuildingException {
+  static Settings readSettings() throws SettingsBuildingException {
     DefaultSettingsBuilder defaultSettingsBuilder = new DefaultSettingsBuilder();
     DefaultSettingsBuildingRequest request = new DefaultSettingsBuildingRequest();
-    File userSettingsFile = new File(System.getProperty("user.home"), ".m2" + File.separator + "settings.xml");
+    File userSettingsFile = new File(System.getProperty("user.home"), ".m2" + File.separator + SETTINGS_FILENAME);
     request.setUserSettingsFile(userSettingsFile);
     defaultSettingsBuilder.setSettingsWriter(new DefaultSettingsWriter());
     defaultSettingsBuilder.setSettingsReader(new DefaultSettingsReader());
